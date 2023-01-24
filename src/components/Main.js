@@ -5,7 +5,7 @@ import MultiRangeSlider from "./Range/multiRangeSlider/MultiRangeSlider";
 
 const Main = () => {
   return (
-    <div>
+    <div className="pb-16">
       {/* <img src="" alt="" />
       <MultiRangeSlider
         min={1000}
