@@ -26,6 +26,8 @@ const Card = () => {
     },
   ];
 
+  const dotSlide = slides.slice(0, 3);
+
   const [currentIndex, setCurrentIndex] = useState(0);
   // const [changeColor, setChangeColor] = useState(false)
   const [like, setLike] = useState(true);
@@ -87,7 +89,7 @@ const Card = () => {
         </div>
         {/* dot filled */}
         <div className="flex top-48 left-0 right-0 justify-center absolute">
-          {slides.length && slides.length < 3 ? (
+          {/* {slides.length && slides.length < 3 ? (
             slides.map((slide, slideIndex) => (
               <div
                 key={slideIndex}
@@ -100,28 +102,32 @@ const Card = () => {
           ) : (
             <>
               <div
-                onClick={() => goToSlide(1)}
+                onClick={() => goToSlide(currentIndex - 1)}
                 className={"text-2xl cursor-pointer text-white py-2"}
               >
                 <RxDotFilled />
               </div>
               <div
-                onClick={() => goToSlide(1)}
+                onClick={() => goToSlide(currentIndex + 1)}
                 className={"text-2xl cursor-pointer text-white py-2"}
               >
                 <RxDotFilled />
               </div>
             </>
-          )}
-          {/* {slides.map((slide, slideIndex) => (
+          )} */}
+          {dotSlide.map((slide, slideIndex) => (
             <div
               key={slideIndex}
               onClick={() => goToSlide(slideIndex)}
-              className={"text-2xl cursor-pointer text-white py-2"}
+              className={
+                slideIndex === currentIndex
+                  ? "text-md cursor-pointer text-slate-700 outline-double rounded-full mx-2"
+                  : "text-md cursor-pointer text-white outline-double rounded-full mx-2"
+              }
             >
               <RxDotFilled />
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
       {/* card body */}
