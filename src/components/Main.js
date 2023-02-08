@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card/Card";
 import HeaderSearch from "./HeaderSearch";
 import MultiRangeSlider from "./Range/multiRangeSlider/MultiRangeSlider";
+import SubscribeForm from "./SubscribeForm/SubscribeForm";
 
 const Main = () => {
   return (
@@ -18,6 +19,9 @@ const Main = () => {
         <div className="w-4/5 md:w-1/5 mx-auto mt-16">
           <Card></Card>
         </div>
+        {/* <div>
+          <SubscribeForm></SubscribeForm>
+        </div> */}
       </div>
     </div>
   );
